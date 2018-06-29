@@ -9,6 +9,7 @@ import { LoginGarcomComponent } from './components/login-garcom/login-garcom.com
 import { LoginCozinheiroComponent } from './components/login-cozinheiro/login-cozinheiro.component';
 import { FormsModule } from '@angular/forms';
 import { PedidoClienteModule } from './components/pedido-cliente/pedido-cliente.module';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PedidoClienteModule } from './components/pedido-cliente/pedido-cliente.
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
     FormsModule,
-    PedidoClienteModule
+    PedidoClienteModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

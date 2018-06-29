@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PedidoService } from '../../../../providers/pedido.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-excluir-pedido',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExcluirPedidoComponent implements OnInit {
 
-  constructor() { }
+  pedidoId;
+
+  constructor(
+    private servicoPedido: PedidoService,
+    private route: ActivatedRoute
+  ) {
+    this.route.queryParams.subscribe(
+      (queryParams:any)=>{
+        if(queryParams){
+          this.pedidoId = queryParams['key'];
+          console.log(this.pedidoId);
+        }
+      }
+    ) 
+  }
 
   ngOnInit() {
+  }
+  
+  excluirPedido(){
+    this.servicoPedido.deleteByKey(this.pedidoId);
   }
 
 }

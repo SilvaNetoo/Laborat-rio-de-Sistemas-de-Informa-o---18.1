@@ -14,6 +14,7 @@ export class FazerPedidoComponent implements OnInit {
 
   constructor() {
     this.garcom.pedidosFeitos = new Array<Pedido>();
+    this.pedido.id=0;
     this.pedido.tipoDeCafe = "Café preto",
     this.pedido.acompanhamento = "Pão de queijo"
     this.garcom.pedidosFeitos.push(this.pedido);
