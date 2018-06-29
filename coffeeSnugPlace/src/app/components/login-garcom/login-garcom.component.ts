@@ -11,13 +11,6 @@ export class LoginGarcomComponent implements OnInit {
 
   garcom: Garcom = new Garcom();
 
-  usuarios = [
-    {
-      nome:'aluno',
-      email:'aluno@email.com',
-      senha:'123456'
-    }
-  ]
 
   constructor(
     // private servico: AppAlunoService,
@@ -28,10 +21,9 @@ export class LoginGarcomComponent implements OnInit {
   }
 
   onSubmit(){
-    for (let i = 0; i < this.usuarios.length; i++) {
-      if(this.garcom.email && this.garcom.senha){
-        this.router.navigate(['/pedido'])
-      }
+    console.log(this.garcom);
+    if(this.garcom.email && this.garcom.senha){
+      this.router.navigate(['/pedido-cliente/fazer-pedido'])
     }
   }
 

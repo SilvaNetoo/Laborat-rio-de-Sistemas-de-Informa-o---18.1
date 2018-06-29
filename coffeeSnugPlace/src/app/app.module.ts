@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginGarcomComponent } from './components/login-garcom/login-garcom.component';
 import { LoginCozinheiroComponent } from './components/login-cozinheiro/login-cozinheiro.component';
 import { FormsModule } from '@angular/forms';
+import { PedidoClienteModule } from './components/pedido-cliente/pedido-cliente.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,13 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     NavbarComponent,
     LoginGarcomComponent,
-    LoginCozinheiroComponent
+    LoginCozinheiroComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(APP_ROUTES),
     FormsModule,
+    PedidoClienteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
