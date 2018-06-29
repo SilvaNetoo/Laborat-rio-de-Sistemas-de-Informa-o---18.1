@@ -8,7 +8,7 @@ const PEDIDO_URN = '/pedido';
 @Injectable({
   providedIn: 'root'
 })
-export class PedidoService {
+export class GarcomService {
 
   contador: number = 0;
   headers: Headers = new Headers({ 'Content-Type': 'application/json' });

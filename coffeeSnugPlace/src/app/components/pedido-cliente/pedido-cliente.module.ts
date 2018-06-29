@@ -1,8 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PedidoClienteComponent } from './pedido-cliente.component';
-import { FazerPedidoModule } from './fazer-pedido/fazer-pedido.module';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FazerPedidoModule } from './fazer-pedido/fazer-pedido.module';
+import { PedidoClienteComponent } from './pedido-cliente.component';
 
 @NgModule({
   imports: [
@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   declarations: [
-    PedidoClienteComponent
+    PedidoClienteComponent,
   ]
 })
 export class PedidoClienteModule { }

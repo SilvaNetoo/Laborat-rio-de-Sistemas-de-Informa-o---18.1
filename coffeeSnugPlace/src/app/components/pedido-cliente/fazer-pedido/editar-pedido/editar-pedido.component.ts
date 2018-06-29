@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../../../../models/pedido.model';
-import { PedidoService } from '../../../../providers/pedido.service';
 import { ActivatedRoute } from '@angular/router';
+import { GarcomService } from '../../../../providers/garcom.service';
 
 @Component({
   selector: 'app-editar-pedido',
@@ -16,14 +16,14 @@ export class EditarPedidoComponent implements OnInit {
   pedidos: Array<Pedido> = new Array<Pedido>();
 
   constructor(
-    private servicoPedido: PedidoService,
+    private servicoGarcom: GarcomService,
     private route: ActivatedRoute
   ) {
     this.route.queryParams.subscribe(
       (queryParams:any)=>{
         if(queryParams){
           this.pedidoId = queryParams['key'];
-          this.servicoPedido.getById(this.pedidoId).subscribe(res=>{
+          this.servicoGarcom.getById(this.pedidoId).subscribe(res=>{
             this.pedido = res.json();
           })
           console.log(this.pedidoId);
@@ -39,7 +39,7 @@ export class EditarPedidoComponent implements OnInit {
     console.log(this.pedido);
     if(this.pedido){
       this.pedidoAnterior = this.pedido;
-      this.servicoPedido.put(this.pedido);
+      this.servicoGarcom.put(this.pedido);
     }
   }
 }

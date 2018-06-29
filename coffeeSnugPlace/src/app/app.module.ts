@@ -10,6 +10,7 @@ import { LoginCozinheiroComponent } from './components/login-cozinheiro/login-co
 import { FormsModule } from '@angular/forms';
 import { PedidoClienteModule } from './components/pedido-cliente/pedido-cliente.module';
 import { HttpModule } from '@angular/http';
+import { PedidoCozinhaModule } from './components/pedido-cozinha/pedido-cozinha.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HttpModule } from '@angular/http';
     RouterModule.forRoot(APP_ROUTES),
     FormsModule,
     PedidoClienteModule,
-    HttpModule
+    HttpModule,
+    PedidoCozinhaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

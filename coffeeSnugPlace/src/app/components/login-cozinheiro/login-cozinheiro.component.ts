@@ -11,14 +11,6 @@ export class LoginCozinheiroComponent implements OnInit {
 
   cozinheiro: Cozinheiro = new Cozinheiro();
 
-  usuarios = [
-    {
-      nome:'aluno',
-      email:'aluno@email.com',
-      senha:'123456'
-    }
-  ]
-
   constructor(
     // private servico: AppAlunoService,
     private router: Router
@@ -27,10 +19,10 @@ export class LoginCozinheiroComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){
-    for (let i = 0; i < this.usuarios.length; i++) {
-      if(this.cozinheiro.email && this.cozinheiro.senha){
-        this.router.navigate(['/aceitar-pedido'])
+  onSubmit() {
+    if(this.cozinheiro){
+      if (this.cozinheiro.email && this.cozinheiro.senha) {
+        this.router.navigate(['/pedido-cozinha']);
       }
     }
   }
