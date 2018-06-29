@@ -16,20 +16,21 @@ export class ExcluirPedidoComponent implements OnInit {
     private route: ActivatedRoute
   ) {
     this.route.queryParams.subscribe(
-      (queryParams:any)=>{
-        if(queryParams){
+      (queryParams: any) => {
+        if (queryParams) {
           this.pedidoId = queryParams['key'];
-          console.log(this.pedidoId);
         }
       }
-    ) 
+    )
   }
 
   ngOnInit() {
   }
-  
-  excluirPedido(){
-    this.servicoPedido.deleteByKey(this.pedidoId);
+
+  excluirPedido() {
+    if (this.pedidoId) {
+      this.servicoPedido.deleteByKey(this.pedidoId);
+    }
   }
 
 }
