@@ -2,7 +2,7 @@ export class Pessoa {
 
     nome: string;
     idade: number;
-    login: string;
+    email: string;
     senha: string;
 
 }

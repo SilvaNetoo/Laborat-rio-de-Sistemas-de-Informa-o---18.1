@@ -1,0 +1,8 @@
+.bg-light{
+    background-color: tomato !important;
+}
+
+.navbar-brand{
+    font-style: italic;
+    font-family: initial;
+}
