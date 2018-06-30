@@ -24,36 +24,6 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
-### Eclipse ###
-
-.metadata
-bin/
-tmp/
-*.tmp
-*.bak
-*.swp
-*~.nib
-local.properties
-.settings/
-.loadpath
-.recommenders
-
-
-### Eclipse Patch ###
-# Eclipse Core
-.project
-
-# JDT-specific (Eclipse Java Development Tools)
-.classpath
-
-# Annotation Processing
-.apt_generated
-
-### Java ###
-# Compiled class file
-*.class
-
-
 # misc
 /.sass-cache
 /connect.lock
@@ -67,5 +37,3 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-/target/
