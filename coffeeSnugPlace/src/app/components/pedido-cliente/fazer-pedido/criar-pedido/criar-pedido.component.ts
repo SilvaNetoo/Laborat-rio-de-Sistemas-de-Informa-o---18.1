@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../../../../models/pedido.model';
-import { PedidoService } from '../../../../providers/pedido.service';
+import { GarcomService } from '../../../../providers/garcom.service';
 
 @Component({
   selector: 'app-criar-pedido',
@@ -11,7 +11,7 @@ export class CriarPedidoComponent implements OnInit {
 
   pedido: Pedido = new Pedido();
 
-  constructor(public servicoPedido: PedidoService) { }
+  constructor(public servicoGarcom: GarcomService) { }
 
   ngOnInit() {
   }
@@ -19,7 +19,7 @@ export class CriarPedidoComponent implements OnInit {
   onSubmit(){
     console.log(this.pedido);
     if(this.pedido){
-      this.servicoPedido.post(this.pedido);
+      this.servicoGarcom.post(this.pedido);
     }
   }
 
