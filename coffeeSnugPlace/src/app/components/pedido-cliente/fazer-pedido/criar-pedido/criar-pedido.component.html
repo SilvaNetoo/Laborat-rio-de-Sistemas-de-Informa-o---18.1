@@ -1,0 +1,18 @@
+<div class="modal-header">
+  <h5 class="modal-title" id="exampleModalLabel">Criar pedido</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<form class="form-group" name="form" #f="ngForm" (ngSubmit)="f.submitted && onSubmit()">
+  <label>Tipo do café</label>
+  <div class="input-group mb-3">
+    <input type="text" id="tipoDoCafe" [(ngModel)]="pedido.tipoDoCafe" name="tipoDoCafe" class="form-control" aria-label="tipoDoCafe" placeholder="Nome do pedido" required>
+  </div>
+  <label for="">Acompanhamento</label>
+  <div class="input-group mb-3">
+    <input type="text" id="acompanhamento" [(ngModel)]="pedido.acompanhamento" name="acompanhamento"  class="form-control" aria-label="acompanhamento" placeholder="Nome do acompanhamento" required>
+  </div>  
+  <button id="button" type="submit" class="btn btn-light"><img src="assets/confirm-login.svg" class="confirmar"></button>
+</form>

@@ -1,0 +1,39 @@
+.confirmar {
+    width: 70px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-light{
+    margin-left: 38%;
+    border: 0;
+    background-color: #ffffff;
+}
+.btn-light:hover{
+    margin-left: 38%;
+    border: 0;
+    background-color: #ffffff;
+}
+
+input,
+.form-control {
+    border-color: #ff0040;;
+    border-bottom: .5px solid #ff0040;;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    margin-top: 15px;
+    outline: none;
+    padding: 0;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+.form-group{
+    padding: 4%;
+}
