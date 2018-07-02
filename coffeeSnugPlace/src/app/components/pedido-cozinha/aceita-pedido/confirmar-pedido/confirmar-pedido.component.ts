@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { GarcomService } from '../../../../providers/garcom.service';
 
 @Component({
-  selector: 'app-excluir-pedido',
-  templateUrl: './excluir-pedido.component.html',
-  styleUrls: ['./excluir-pedido.component.css']
+  selector: 'app-confirmar-pedido',
+  templateUrl: './confirmar-pedido.component.html',
+  styleUrls: ['./confirmar-pedido.component.css']
 })
-export class ExcluirPedidoComponent implements OnInit {
+export class ConfirmarPedidoComponent implements OnInit {
 
   pedidoId;
 
@@ -27,9 +27,14 @@ export class ExcluirPedidoComponent implements OnInit {
   ngOnInit() {
   }
 
-  excluirPedido() {
+  /**
+   * Aqui deve passar o pedido para o serviço de cozinha
+   * e tirar de servico pedido service que deverá se chamar de garcom.service 
+   */
+  aceitarPedido(){
+    console.log(this.pedidoId)
     if (this.pedidoId) {
-      this.servicoGarcom.deleteByKey(this.pedidoId);
+      // this.servicoGarcom.deleteByKey(this.pedidoId);
     }
   }
 

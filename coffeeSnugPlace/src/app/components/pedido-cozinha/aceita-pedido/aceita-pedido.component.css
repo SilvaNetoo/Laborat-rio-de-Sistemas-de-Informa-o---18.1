@@ -1,0 +1,91 @@
+.dashbord {
+    margin-top: .5%;
+    width: 80%;
+    background-color: #fff;
+    height: 550px;
+}
+.barrinha {
+    width: 33.3%;
+    height: 8px;
+    background-color: #43A2B4;
+    margin-left: 33.3%;
+}
+.titulo {
+    text-align: center;
+    color: #065463;
+    margin-top: 3%;
+    font-size: 50px;
+}
+.table{
+    margin-top: 10px;
+    border-top-color: none;
+}
+#centraliza-icones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+tbody{
+    background-color: #EAEAEA;
+}
+tr:nth-child(even) {
+    background-color: #fff;
+}
+th{
+    border-top: none;
+    color: #43A2B4
+}
+td{
+    justify-content: center;
+}
+.resultados{
+    width: 20px;
+    margin-left: 30px;
+}
+span :focus{
+    box-shadow: 0 0 5px rgb(255, 255, 255);
+}
+.editar-tamanho{
+    width: 30px;
+    margin-left: 11%;
+    margin-right: 61%;
+}
+#botao-fechar{
+    background-color: #065463;
+}
+#titulo-modal{
+    float: right;
+}
+#titulo-tabela{
+    color: #065463;
+    margin-top: 8%;
+    margin-bottom: 0%;
+}
+#botao-icones{
+    border: 0;
+}
+
+.cadastrar-tamanho{
+    width: 36px;
+    margin-left: 39%;
+    margin-right: 61%;
+}
+
+#cadastrar-button{
+    border: 0;
+}
+
+.botao-cadastrar{
+    width: 30px;
+    margin: 20% auto;
+    margin-bottom: 3%;
+}
+
+.btn-outline-info{
+    margin-left: 72%;
+    margin-top: 25%;
+}
+
+.btn-outline-info > img{
+    width: 70%;
+}
