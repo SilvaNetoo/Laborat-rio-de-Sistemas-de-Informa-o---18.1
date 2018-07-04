@@ -30,7 +30,7 @@ export class LoginGarcomComponent implements OnInit {
       this.pessoas.forEach(element => {
         console.log(element);
         if(element.tipo == "cozinheiro" && element.email == this.pessoa.email){
-          this.router.navigate(['/pedido-cozinha']);
+          this.router.navigate(['/pedido-cliente/fazer-pedido']);
         }
       });
     });
