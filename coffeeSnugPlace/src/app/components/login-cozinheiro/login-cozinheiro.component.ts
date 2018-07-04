@@ -25,18 +25,16 @@ export class LoginCozinheiroComponent implements OnInit {
   }
 
   onSubmit() {
-    this.service.getAll().subscribe(res=>{
+    this.service.getAll().subscribe(res => {
       this.pessoas = res;
       console.log(this.pessoas);
       this.pessoas.forEach(element => {
         console.log(element);
-        if(element.tipo == "cozinheiro" && element.email == this.pessoa.email){
+        if (element.tipo == "cozinheiro" && element.email == this.pessoa.email) {
           this.router.navigate(['/pedido-cozinha']);
         }
       });
     });
-
- 
   }
 
 
