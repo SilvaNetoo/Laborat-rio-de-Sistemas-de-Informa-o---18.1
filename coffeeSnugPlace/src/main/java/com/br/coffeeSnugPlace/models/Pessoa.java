@@ -1,16 +1,17 @@
 package com.br.coffeeSnugPlace.models;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
-@Entity
-public class Pessoa {
+@MappedSuperclass
+public abstract class Pessoa {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy =GenerationType.AUTO)
 	private Long id;
+	
 	private String nome;
 	private int idade;
 	private String email;
