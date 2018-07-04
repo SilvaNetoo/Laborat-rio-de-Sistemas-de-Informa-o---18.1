@@ -5,5 +5,6 @@ export class Pessoa {
     idade: number;
     email: string;
     senha: string;
+    tipo: string;
 
 }

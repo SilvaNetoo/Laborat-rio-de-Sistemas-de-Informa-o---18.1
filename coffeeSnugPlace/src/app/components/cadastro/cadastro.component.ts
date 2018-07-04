@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class CadastroComponent implements OnInit {
 
   pessoa: Pessoa = new Pessoa();
+  isOk: boolean = false;
 
   constructor(
     public service: PessoaService,
@@ -21,10 +22,18 @@ export class CadastroComponent implements OnInit {
   }
 
   onSubmit() {
-    if(this.pessoa){
-      if (this.pessoa.email && this.pessoa.senha) {
-        this.service.post(this.pessoa);
-      }
+    console.log(this.pessoa)
+    if(this.pessoa.tipo && this.pessoa.email && this.pessoa.senha){
+      this.service.post(this.pessoa);
     }
+  }
+
+  getProfession(profissão: string):boolean{
+    this.isOk = false;
+    this.pessoa.tipo = profissão;
+    if(this.pessoa.tipo){
+      this.isOk = true;
+    }
+    return this.isOk;
   }
 }

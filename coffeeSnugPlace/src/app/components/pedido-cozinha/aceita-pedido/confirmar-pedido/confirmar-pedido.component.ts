@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GarcomService } from '../../../../providers/garcom.service';
+import { PedidoService } from '../../../../providers/pedido.service';
+import { ACEITO } from '../../../../const';
+import { Pedido } from '../../../../models/pedido.model';
 
 @Component({
   selector: 'app-confirmar-pedido',
@@ -9,16 +11,20 @@ import { GarcomService } from '../../../../providers/garcom.service';
 })
 export class ConfirmarPedidoComponent implements OnInit {
 
-  pedidoId;
+  pedidoId:number;
+  pedidoAnterior;
 
   constructor(
-    private servicoGarcom: GarcomService,
+    public servicoCozinheiro: PedidoService,
     private route: ActivatedRoute
   ) {
     this.route.queryParams.subscribe(
       (queryParams: any) => {
         if (queryParams) {
           this.pedidoId = queryParams['key'];
+          this.servicoCozinheiro.getById(this.pedidoId).subscribe(res => {
+            this.pedidoAnterior = res;
+          })
         }
       }
     )
@@ -31,11 +37,11 @@ export class ConfirmarPedidoComponent implements OnInit {
    * Aqui deve passar o pedido para o serviço de cozinha
    * e tirar de servico pedido service que deverá se chamar de garcom.service 
    */
-  aceitarPedido(){
-    console.log(this.pedidoId)
-    if (this.pedidoId) {
-      // this.servicoGarcom.deleteByKey(this.pedidoId);
-    }
+  aceitarPedido() {
+    this.pedidoAnterior.estado = ACEITO;
+    this.pedidoAnterior.id = this.pedidoId;
+    console.log(this.pedidoAnterior);
+    this.servicoCozinheiro.post(this.pedidoAnterior);
   }
 
 }

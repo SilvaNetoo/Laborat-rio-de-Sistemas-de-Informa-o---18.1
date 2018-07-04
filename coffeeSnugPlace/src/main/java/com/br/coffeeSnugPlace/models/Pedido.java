@@ -14,52 +14,53 @@ public class Pedido {
 	private String tipoCafe;
 	private String acompanhamento;
 	private int quantidade;
-	
-	
-	public Pedido(){
-		
+	private String estado;
+
+	/**
+	 * @return the estado
+	 */
+	public String getEstado() {
+		return estado;
 	}
 
+	/**
+	 * @param estado
+	 *            the estado to set
+	 */
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
 
 	public Long getId() {
 		return id;
 	}
 
-
 	public void setId(Long id) {
 		this.id = id;
 	}
-
 
 	public String getTipoCafe() {
 		return tipoCafe;
 	}
 
-
 	public void setTipoCafe(String tipoCafe) {
 		this.tipoCafe = tipoCafe;
 	}
-
 
 	public String getAcompanhamento() {
 		return acompanhamento;
 	}
 
-
 	public void setAcompanhamento(String acompanhamento) {
 		this.acompanhamento = acompanhamento;
 	}
-
 
 	public int getQuantidade() {
 		return quantidade;
 	}
 
-
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	
-	
-	
+
 }

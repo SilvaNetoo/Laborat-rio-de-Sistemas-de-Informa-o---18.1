@@ -1,8 +1,9 @@
 export class Pedido{
 
     id?:number;
-    tipoDeCafe: string;
+    tipoCafe: string;
     acompanhamento: string;
     quantidade:number;
+    estado: string;
 
 }

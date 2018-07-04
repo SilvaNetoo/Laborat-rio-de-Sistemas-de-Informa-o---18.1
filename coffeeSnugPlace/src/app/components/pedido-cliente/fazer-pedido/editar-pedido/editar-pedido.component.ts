@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../../../../models/pedido.model';
 import { ActivatedRoute } from '@angular/router';
-import { GarcomService } from '../../../../providers/garcom.service';
+import { PedidoService } from '../../../../providers/pedido.service';
 
 @Component({
   selector: 'app-editar-pedido',
@@ -13,10 +13,9 @@ export class EditarPedidoComponent implements OnInit {
   pedidoId: number;
   pedido: Pedido = new Pedido();
   pedidoAnterior;
-  pedidos: Array<Pedido> = new Array<Pedido>();
 
   constructor(
-    private servicoGarcom: GarcomService,
+    private servicoGarcom: PedidoService,
     private route: ActivatedRoute
   ) {
     this.route.queryParams.subscribe(
@@ -24,9 +23,8 @@ export class EditarPedidoComponent implements OnInit {
         if(queryParams){
           this.pedidoId = queryParams['key'];
           this.servicoGarcom.getById(this.pedidoId).subscribe(res=>{
-            this.pedido = res.json();
+            this.pedidoAnterior = res;
           })
-          console.log(this.pedidoId);
         }
       }
     ) 
@@ -38,8 +36,11 @@ export class EditarPedidoComponent implements OnInit {
   onSubmit(){
     console.log(this.pedido);
     if(this.pedido){
-      this.pedidoAnterior = this.pedido;
-      this.servicoGarcom.put(this.pedido);
+      this.pedidoAnterior.acompanhamento = this.pedido.acompanhamento;
+      this.pedidoAnterior.tipoCafe = this.pedido.tipoCafe;
+      this.pedidoAnterior.quantidade = this.pedido.quantidade;
+      this.pedidoAnterior.id = this.pedidoId;
+      this.servicoGarcom.post(this.pedidoAnterior);
     }
   }
 }
