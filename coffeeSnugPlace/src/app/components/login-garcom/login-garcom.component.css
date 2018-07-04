@@ -1,6 +1,6 @@
 .jumbotron,
 .login {
-    width: 438px;
+    width: 50%;
     background-color: #fff;
     margin: 0 auto;
     margin-top: 136px;
@@ -74,7 +74,6 @@ form {
 
 #titulo{
     overflow: hidden;
-    margin-left: 31%;
+    text-align: center;
     width: 100%;
-    margin-top: -10px;
 }
