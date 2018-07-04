@@ -3,12 +3,13 @@
   <form name="form" #f="ngForm" (ngSubmit)="f.form.valid && onSubmit()">
       
       <div class="input-group mb-3">
-          <input type="email" [(ngModel)]="cozinheiro.email" name="email" placeholder="E-mail" class="form-control" aria-label="email" required>
+          <input type="email" [(ngModel)]="pessoa.email" name="email" placeholder="E-mail" class="form-control" aria-label="email" required>
       </div>
       <div class="input-group mb-3">
-          <input type="password" [(ngModel)]="cozinheiro.senha" name="senha" class="form-control" aria-label="senha" placeholder="Senha" required>
+          <input type="password" [(ngModel)]="pessoa.senha" name="senha" class="form-control" aria-label="senha" placeholder="Senha" required>
       </div>
       
       <button id="button" type="submit" class="btn btn-light"><img src="assets/confirm-login.svg" class="confirmar"></button>
+
   </form>
 </div>

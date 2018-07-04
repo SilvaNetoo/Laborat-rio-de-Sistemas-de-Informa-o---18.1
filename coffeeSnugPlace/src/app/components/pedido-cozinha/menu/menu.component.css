@@ -50,3 +50,11 @@
     text-align: center;
     cursor: pointer;
 }
+
+.btn-outline-info{
+    margin-left: 91%;
+}
+
+.btn-outline-info > img{
+    width: 70%;
+}
