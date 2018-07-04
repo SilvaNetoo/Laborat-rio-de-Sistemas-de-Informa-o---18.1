@@ -38,7 +38,7 @@ public class PedidosController {
 		return new ResponseEntity<Pedido>(service.salva(pedido), HttpStatus.CREATED);
 	}
 	
-	
+	@PutMapping
 	public ResponseEntity<Pedido> editar(@RequestBody Pedido pedido){		
 		
 		return new ResponseEntity<Pedido>(service.atualiza(pedido), HttpStatus.OK);
