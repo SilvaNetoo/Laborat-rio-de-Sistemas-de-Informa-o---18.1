@@ -22,39 +22,7 @@
     margin-left: 33.3%;
 }
 
-.icone1{
+.icones{
     width: 90px;
-    margin-left: 20%;
-    margin-top: 30px;
-    display: inline-block;
 }
 
-.icone2{
-    width: 90px;
-    margin-left: 34%;
-    margin-top: 30px;
-    display: inline-block;
-}
-
-.texto1{
-    width: 175%;
-    color: #065463; 
-    margin-top: 20px;
-    margin-left: 26px;
-    cursor: pointer;
-}
-
-.texto2{
-    color: #065463;
-    margin-top: 20px;
-    text-align: center;
-    cursor: pointer;
-}
-
-.btn-outline-info{
-    margin-left: 91%;
-}
-
-.btn-outline-info > img{
-    width: 70%;
-}
