@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class LoginCozinheiroComponent implements OnInit {
 
   pessoa: Pessoa = new Pessoa();
+  pessoas;
 
   constructor(
     public service: PessoaService,
@@ -24,12 +25,18 @@ export class LoginCozinheiroComponent implements OnInit {
   }
 
   onSubmit() {
+    this.service.getAll().subscribe(res=>{
+      this.pessoas = res;
+      console.log(this.pessoas);
+      this.pessoas.forEach(element => {
+        console.log(element);
+        if(element.tipo == "cozinheiro" && element.email == this.pessoa.email){
+          this.router.navigate(['/pedido-cozinha']);
+        }
+      });
+    });
 
-    if(this.pessoa){
-      if (this.pessoa.email && this.pessoa.senha) {
-        this.router.navigate(['/pedido-cozinha']);
-      }
-    }
+ 
   }
 
 

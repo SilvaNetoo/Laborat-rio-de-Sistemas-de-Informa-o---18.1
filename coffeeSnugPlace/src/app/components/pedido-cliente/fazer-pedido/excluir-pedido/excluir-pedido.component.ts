@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { GarcomService } from '../../../../providers/garcom.service';
+import { PedidoService } from '../../../../providers/pedido.service';
 
 @Component({
   selector: 'app-excluir-pedido',
@@ -12,7 +12,7 @@ export class ExcluirPedidoComponent implements OnInit {
   pedidoId;
 
   constructor(
-    private servicoGarcom: GarcomService,
+    private servicoGarcom: PedidoService,
     private route: ActivatedRoute
   ) {
     this.route.queryParams.subscribe(
