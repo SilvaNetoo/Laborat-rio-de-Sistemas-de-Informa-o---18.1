@@ -11,4 +11,5 @@ public class CoffeeSnugPlace {
 		SpringApplication.run(CoffeeSnugPlace.class, args);
 	}
 
+	
 }
