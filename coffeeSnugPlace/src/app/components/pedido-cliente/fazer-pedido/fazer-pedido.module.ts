@@ -6,6 +6,7 @@ import { CriarPedidoComponent } from './criar-pedido/criar-pedido.component';
 import { ExcluirPedidoComponent } from './excluir-pedido/excluir-pedido.component';
 import { EditarPedidoComponent } from './editar-pedido/editar-pedido.component';
 import { FormsModule } from '@angular/forms';
+import { NgxNotificationComponent } from 'ngx-notification';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
     FazerPedidoComponent,
     CriarPedidoComponent,
     ExcluirPedidoComponent,
-    EditarPedidoComponent
+    EditarPedidoComponent,
+    NgxNotificationComponent
   ]
 })
 export class FazerPedidoModule { }
