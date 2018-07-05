@@ -1,6 +1,8 @@
+import { Pessoa } from './../../models/pessoa.model';
 import { Garcom } from './../../models/garcom.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PessoaService } from '../../providers/pessoa.service';
 
 @Component({
   selector: 'app-login-garcom',
@@ -9,22 +11,29 @@ import { Router } from '@angular/router';
 })
 export class LoginGarcomComponent implements OnInit {
 
-  garcom: Garcom = new Garcom();
-
+  pessoa: Pessoa = new Pessoa();
+  pessoas;
 
   constructor(
-    // private servico: AppAlunoService,
+    public service: PessoaService,
     private router: Router
-  ) { }
+  ) {
 
-  ngOnInit() {
   }
 
-  onSubmit(){
-    console.log(this.garcom);
-    if(this.garcom.email && this.garcom.senha){
-      this.router.navigate(['/pedido-cliente/fazer-pedido'])
-    }
+  ngOnInit(){}
+
+  onSubmit() {
+    this.service.getAll().subscribe(res=>{
+      this.pessoas = res;
+      console.log(this.pessoas);
+      this.pessoas.forEach(element => {
+        console.log(element);
+        if(element.tipo == "garcom" && element.email == this.pessoa.email){
+          this.router.navigate(['/pedido-cliente/fazer-pedido']);
+        }
+      });
+    });
   }
 
 }

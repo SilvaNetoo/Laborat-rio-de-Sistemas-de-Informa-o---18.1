@@ -19,6 +19,10 @@ public class PedidoService {
 		return repository.save(pedido);
 	}
 	
+	public List<Pedido> buscaPorEstado(String estado){
+		return repository.findByEstado(estado);
+	}
+	
 	public Pedido atualiza(Pedido pedido){
 		return repository.save(pedido);
 	}

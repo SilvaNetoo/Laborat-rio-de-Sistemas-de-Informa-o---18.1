@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.br.coffeeSnugPlace.models.Pedido;
@@ -32,13 +34,19 @@ public class PedidosController {
 		return new ResponseEntity<Pedido>(service.buscaPorId(id), HttpStatus.OK);
 	}
 	
+	@GetMapping("/search")
+	public ResponseEntity<List<Pedido>> buscarPorEstado(@RequestParam String estado){
+		
+		return new ResponseEntity<List<Pedido>>(service.buscaPorEstado(estado), HttpStatus.OK);
+	}
+	
 	@PostMapping
 	public ResponseEntity<Pedido> adicionar(@RequestBody Pedido pedido){
 		
 		return new ResponseEntity<Pedido>(service.salva(pedido), HttpStatus.CREATED);
 	}
 	
-	
+	@PutMapping
 	public ResponseEntity<Pedido> editar(@RequestBody Pedido pedido){		
 		
 		return new ResponseEntity<Pedido>(service.atualiza(pedido), HttpStatus.OK);

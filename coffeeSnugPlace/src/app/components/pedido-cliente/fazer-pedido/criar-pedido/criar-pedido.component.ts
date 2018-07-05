@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Pedido } from '../../../../models/pedido.model';
-import { GarcomService } from '../../../../providers/garcom.service';
+import { Garcom } from '../../../../models/garcom.model';
+import { CRIADO } from '../../../../const';
+import { PedidoService } from '../../../../providers/pedido.service';
 
 @Component({
   selector: 'app-criar-pedido',
@@ -11,15 +13,20 @@ export class CriarPedidoComponent implements OnInit {
 
   pedido: Pedido = new Pedido();
 
-  constructor(public servicoGarcom: GarcomService) { }
+  garcom: Garcom = new Garcom();
+
+  constructor(public servicoGarcom: PedidoService) {
+  }
 
   ngOnInit() {
   }
 
-  onSubmit(){
+  onSubmit() {
     console.log(this.pedido);
-    if(this.pedido){
+    if (this.pedido) {
+      this.pedido.estado = CRIADO;
       this.servicoGarcom.post(this.pedido);
+      this.pedido = new Pedido();
     }
   }
 

@@ -1,3 +1,4 @@
+import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { LoginGarcomComponent } from './components/login-garcom/login-garcom.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
@@ -20,8 +21,11 @@ export const APP_ROUTES: Routes = [
     { path: 'home', component: HomeComponent },
 
     //Rota de login
-    { path: 'login-garcom', component: LoginGarcomComponent },
-    { path: 'login-cozinheiro', component: LoginCozinheiroComponent },
+    { path: 'login-garcom', component: LoginGarcomComponent},
+    { path: 'login-cozinheiro', component: LoginCozinheiroComponent},
+    
+    {path: 'cadastro', component: CadastroComponent},
+    
 
     //Componentes de pedido
     //Garçom

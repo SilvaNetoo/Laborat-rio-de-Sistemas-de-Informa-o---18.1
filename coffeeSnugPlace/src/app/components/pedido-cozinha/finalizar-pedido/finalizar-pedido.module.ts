@@ -9,6 +9,6 @@ import { ConfirmarTerminoComponent } from './confirmar-termino/confirmar-termino
     CommonModule,
     RouterModule
   ],
-  declarations: [FinalizarPedidoComponent, ConfirmarTerminoComponent]
+    declarations: [FinalizarPedidoComponent, ConfirmarTerminoComponent]
 })
 export class FinalizarPedidoModule { }

@@ -1,3 +1,5 @@
+import { PessoaService } from './../../providers/pessoa.service';
+import { Pessoa } from './../../models/pessoa.model';
 import { Cozinheiro } from './../../models/cozinheiro.model';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -9,22 +11,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginCozinheiroComponent implements OnInit {
 
-  cozinheiro: Cozinheiro = new Cozinheiro();
+  pessoa: Pessoa = new Pessoa();
+  pessoas;
 
   constructor(
-    // private servico: AppAlunoService,
+    public service: PessoaService,
     private router: Router
-  ) { }
+  ) {
+
+  }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    if(this.cozinheiro){
-      if (this.cozinheiro.email && this.cozinheiro.senha) {
-        this.router.navigate(['/pedido-cozinha']);
-      }
-    }
+    this.service.getAll().subscribe(res => {
+      this.pessoas = res;
+      console.log(this.pessoas);
+      this.pessoas.forEach(element => {
+        console.log(element);
+        if (element.tipo == "cozinheiro" && element.email == this.pessoa.email) {
+          this.router.navigate(['/pedido-cozinha']);
+        }
+      });
+    });
   }
 
 

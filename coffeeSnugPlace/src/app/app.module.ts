@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { PedidoClienteModule } from './components/pedido-cliente/pedido-cliente.module';
 import { HttpModule } from '@angular/http';
 import { PedidoCozinhaModule } from './components/pedido-cozinha/pedido-cozinha.module';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PedidoCozinhaModule } from './components/pedido-cozinha/pedido-cozinha.
     NavbarComponent,
     LoginGarcomComponent,
     LoginCozinheiroComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,

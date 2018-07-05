@@ -1,20 +1,22 @@
 package com.br.coffeeSnugPlace.models;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
-@Entity
-public class Pessoa {
+@MappedSuperclass
+public abstract class Pessoa {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy =GenerationType.AUTO)
 	private Long id;
+	
 	private String nome;
 	private int idade;
 	private String email;
 	private String senha;
+	private String tipo;
 	
 	public Pessoa(){
 		
@@ -52,12 +54,20 @@ public class Pessoa {
 		this.email = email;
 	}
 
-	private String getSenha() {
+	public String getSenha() {
 		return senha;
 	}
 
-	private void setSenha(String senha) {
+	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public boolean validaLogin(String email, String senha){
