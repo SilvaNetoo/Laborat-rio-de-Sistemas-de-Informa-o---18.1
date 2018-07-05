@@ -20,7 +20,7 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
     NavbarComponent,
     LoginGarcomComponent,
     LoginCozinheiroComponent,
-    CadastroComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,

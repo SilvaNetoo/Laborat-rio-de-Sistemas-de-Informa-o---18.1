@@ -14,7 +14,9 @@ export class FinalizarPedidoComponent implements OnInit {
   pedido: Pedido = new Pedido();
   cozinheiro: Cozinheiro = new Cozinheiro();
 
-  constructor(public servicoGarcom: PedidoService) {
+  constructor(
+    public servicoGarcom: PedidoService,
+  ) {
     servicoGarcom.getByState(ACEITO).subscribe(res=>{
       console.log(res);
       this.cozinheiro.pedidosConcluidos = res;

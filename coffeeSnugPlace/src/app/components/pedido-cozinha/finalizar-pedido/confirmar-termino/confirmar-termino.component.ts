@@ -15,7 +15,7 @@ export class ConfirmarTerminoComponent implements OnInit {
 
   constructor(
     public servicoCozinheiro: PedidoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {
     this.route.queryParams.subscribe(
       (queryParams: any) => {
