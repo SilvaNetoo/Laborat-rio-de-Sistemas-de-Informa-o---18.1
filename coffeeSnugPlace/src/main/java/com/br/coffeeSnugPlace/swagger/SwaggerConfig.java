@@ -16,14 +16,11 @@ public class SwaggerConfig {
 
 	
 	public Docket api() {
-		
-		
 		return new Docket(DocumentationType.SWAGGER_2).select().apis(RequestHandlerSelectors.basePackage("gerenciadorDeBiblioteca")).paths(PathSelectors.any()).build().apiInfo(apiInfo());
 	}
 
 	
 	public ApiInfo apiInfo() {
-		
 		return new ApiInfoBuilder().title("Swagger API now").description("Documento de acesso aos endpoints com o Swagger.").version("1.0").build();
 	}
 }
