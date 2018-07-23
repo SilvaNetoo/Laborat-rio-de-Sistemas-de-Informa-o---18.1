@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Pedido } from '../../../models/pedido.model';
-import { Garcom } from '../../../models/garcom.model';
-import { PedidoService } from '../../../providers/pedido.service';
-import { CRIADO, FINALIZADO } from '../../../const';
 import { NgxNotificationService } from 'ngx-notification';
-import { timeout } from 'q';
+import { CRIADO, FINALIZADO } from '../../../const';
+import { Garcom } from '../../../models/garcom.model';
+import { Pedido } from '../../../models/pedido.model';
+import { PedidoService } from '../../../providers/pedido.service';
 
 @Component({
   selector: 'app-fazer-pedido',
